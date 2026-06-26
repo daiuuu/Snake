@@ -6,6 +6,12 @@ El proyecto combina la mecánica tradicional del juego con una estética **dark 
 
 ---
 
+## 🌸 Demo
+
+> [https://daiuuu.github.io/Tetris/](https://daiuuu.github.io/Snake/)
+
+---
+
 ## ✨ Características
 
 * 🎮 Jugabilidad clásica de Snake.
