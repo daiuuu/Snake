@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>Snake</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <!-- Manchas de fondo difuminadas -->
+    <div class="blob blob-rosa"></div>
+    <div class="blob blob-celeste"></div>
+    <div class="blob blob-lila"></div>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <h1 class="game-title">
+                <span class="title-snake">Snake</span>
+                <span class="title-edition">Pastel Edition</span>
+            </h1>
+        </div>
+    </header>
+
+    <!-- HUD: tres tarjetas principales + combo oculto -->
+    <div class="hud">
+        <div class="hud-card hud-card--rosa">
+            <span class="hud-label">Score</span>
+            <span class="hud-valor" id="score-valor">00000</span>
+        </div>
+        <div class="hud-card hud-card--celeste">
+            <span class="hud-label">Level</span>
+            <span class="hud-valor" id="nivel-valor">1</span>
+        </div>
+        <div class="hud-card hud-card--lila">
+            <span class="hud-label">Récord</span>
+            <span class="hud-valor" id="highscore-valor">00000</span>
+        </div>
+        <div class="hud-card hud-card--combo">
+            <span class="hud-label">Combo</span>
+            <span class="hud-valor" id="combo-valor"></span>
+        </div>
+    </div>
+
+    <div id="efecto-activo" aria-live="polite"></div>
+
+    <main class="game-wrapper">
+        <canvas id="game-canvas" role="img" aria-label="Tablero del juego Snake"></canvas>
+
+        <!-- Pantalla de bienvenida -->
+        <section id="pantalla-bienvenida" class="pantalla" role="dialog" aria-modal="true">
+            <div class="modal-card">
+                <h2>Snake Pastel</h2>
+                <p>Come frutas y consigue el récord más alto.</p>
+                <p class="controles">Flechas para mover &middot; P para pausar</p>
+                <button id="btn-jugar" class="btn btn-primario">JUGAR</button>
+            </div>
+        </section>
+
+        <!-- Pantalla de Game Over -->
+        <section id="pantalla-gameover" class="pantalla oculto" role="dialog" aria-modal="true">
+            <div class="modal-card">
+                <h2>Game Over</h2>
+
+                <div class="resultado-grid">
+                    <div class="resultado-fila">
+                        <span class="resultado-label">Puntaje</span>
+                        <span class="resultado-valor" id="go-score">00000</span>
+                    </div>
+                    <div class="resultado-fila">
+                        <span class="resultado-label">Nivel</span>
+                        <span class="resultado-valor" id="go-nivel">1</span>
+                    </div>
+                    <div class="resultado-fila">
+                        <span class="resultado-label">Récord</span>
+                        <span class="resultado-valor" id="go-highscore">00000</span>
+                    </div>
+                </div>
+
+                <p id="go-record" style="display:none;">¡Nuevo Récord!</p>
+                <button id="btn-reiniciar" class="btn btn-primario">JUGAR DE NUEVO</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        Hecho con <span class="corazon">💖</span> por Daiana Soria Piola
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/input.js"></script>
+    <script src="js/food.js"></script>
+    <script src="js/snake.js"></script>
+    <script src="js/renderer.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/game.js"></script>
+
+</body>
+</html>
